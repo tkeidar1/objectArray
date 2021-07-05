@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body style= "text-align: center;">
+    <h2>
+    <button onclick="add(userName.value,tel.value,email.value)">Add</button>
+    <button onclick="remove(userName.value);console.log(students)">Delete</button>
+    <button onclick="myFind(userName.value)">Find by name</button><br>
+
+    <label for="productName"> prodauct Name</label>
+    <input id='productName' placeholder="product Name">
+    <br>
+    <label for="productId"> product Id</label>
+    <input id='productId' placeholder="product Id"><br>
+
+
+    <label for="quantity"> quantity</label>
+    <input id='quantity' placeholder="quantity">
+
+    <br>
+    <br>
+    <button onclick="currentPosition=0;updDisplay('first')">&lt;&lt;</button>
+    <button onclick="move(-1)">&lt;</button>
+    <button onclick="move(1)">></button>
+    <button onclick="move(students.length-1)">>></button>
+</h2>
+    <div id="display">
+
+
+
+    </div>
+
+    <script>
+        const product = {
+            name: "",
+            id: number,
+            cathegory: "",
+            quantity: number,
+            price: number
+        }
+
+        let inventory=[]
+        let myCart=[]
+
+
+
+    </script>
+
+</body>
+
+</html>
