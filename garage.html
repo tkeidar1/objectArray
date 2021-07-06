@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div id="Clients"></div>
+    <div id="Cars"></div>
+    <div id="Treatments"></div>
+
+    <script>
+
+        let clientList = [{ fName: "john", lName: "doe", id: 123, phone: 321123, active: true, car1Id: 4321, car2Id: 7654, car3Id: 9876, car4Id: 2468 }]
+        let carList = [{ carId: 4321, model: "911", license: 12345, lastTreatment: "10000", lastTreatmentDate: 121212, currentTreatmentCode: 99, nextTreatmentCode: 88, nextTreatmentDate: 221122 }]
+        let treatmentList = [{ treatmentCode: 99, partslist: "abc", price: 3232, treatmentLength: 12 }]
+
+        function creatClientsDisplay()
+        {
+            Clients.innerHTML = ''
+            for (let index = 0; index < clientList.length; index++) {
+                Clients.innerHTML += `
+                <div class="card text-dark bg-info" style="width: 12rem;margin: 10px;">
+                <img src='https://picsum.photos/4${clientList[index].id} ' class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"> Name: ${clientList[index].fName} ${clientList[index].lName}</h5>
+                    <p class="card-text">Phone: ${clientList[index].phone}
+                    Id: ${clientList[index].id} </p>
+                     <p ${clientList[index].active ? 'Active' : 'Not Active'} </p>
+                    <button onclick="delClient(${index})" class='btn btn-danger'>Delete</button>
+                   
+                </div>
+            </div>`
+                // <button onclick="addStudent(${index})" class='btn btn-success'>Add</button>
+            }
+
+        }
+        creatClientsDisplay()
+
+        // creatCarsDisplay()
+        // {
+        //     innerHTML = ''
+
+
+        // }
+        // creatTreatmentsDisplay()
+        // {
+        //     innerHTML = ''
+
+
+        // }
+
+
+        // function addClient() {
+
+
+        // }
+
+        function delClient(ind) {
+            clientList.splice(ind, 1)
+            creatClientsDisplay()
+
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
